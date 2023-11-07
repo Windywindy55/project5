@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{background: black;margin:0}
+        #fish{width:100px;position: absolute;}
+    </style>
+</head>
+<body>
+    <img src="fish.png" id="fish">
+    <script type="text/javascript">
+    var t = setInterval(makefish,1000);
+
+function makefish(){
+    let x = Math.random()*(window.innerWidth - 100);
+    let y = Math.random()*(window.innerHeight - 106);
+    let d = document.getElementById("fish");
+    let a = d.cloneNode(true);
+    a.onclick = function(){ this.remove();}
+    a.style.left = x + "px";
+    a.style.top = y + "px";
+    document.body.appendChild(a);
+    console.log(x,y);
+}  
+        
+    </script>
